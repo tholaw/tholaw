@@ -1,10 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        label 'slave'
+    }
 
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                sh 'java -version'
+                echo "Get working directory"
+                sh 'pwd'
             }
         }
     }
